@@ -82,10 +82,10 @@ $(document).ready(function() {
             return;
         }
         workSliderTimer = window.setInterval(function() {
-            if ($("body").hasClass("fp-viewing-3")) {
+            if ($("body").hasClass("fp-viewing-5")) {
                 $.fn.fullpage.moveSlideRight();
             }
-        }, 10000);
+        }, 15000);
     }
 
     var homeVideo = document.getElementById("home-bg-video");
@@ -108,25 +108,25 @@ $(document).ready(function() {
     /* ------------------------------------- */
 
     $("#fullpage").fullpage({
-        anchors: "1234567".split(""),
-        navigationTooltips: ["Home", "Our Work", "How We Work", "The Work", "Who This Is For", "About Jacob", "Contact"],
+        anchors: "123456".split(""),
+        navigationTooltips: ["Home", "Our Work", "How We Work", "Who This Is For", "The Work", "Contact"],
         showActiveTooltip: !1,
         menu: "#menu",
         css3: !0,
         scrollingSpeed: 800,
         responsiveWidth: 1025,
         afterLoad: function(anchorLink, index) {
-            if (index === 4) {
+            if (index === 5) {
                 startWorkSliderTimer();
             } else {
                 clearWorkSliderTimer();
             }
         },
         onLeave: function(index, nextIndex) {
-            if (index === 4 && nextIndex !== 4) {
+            if (index === 5 && nextIndex !== 5) {
                 clearWorkSliderTimer();
             }
-            if (nextIndex === 4) {
+            if (nextIndex === 5) {
                 startWorkSliderTimer();
             }
         }

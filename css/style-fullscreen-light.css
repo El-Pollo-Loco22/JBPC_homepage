@@ -2460,17 +2460,29 @@ iframe {
   color: #6534ff;
 }
 
-body.fp-viewing-3 .fp-controlArrow.fp-prev,
-body.fp-viewing-3 .fp-controlArrow.fp-next {
-  bottom: 104px;
-  color: #ffffff;
+html[class*="fp-viewing-5"] .fp-controlArrow.fp-prev,
+html[class*="fp-viewing-5"] .fp-controlArrow.fp-next,
+body[class*="fp-viewing-5"] .fp-controlArrow.fp-prev,
+body[class*="fp-viewing-5"] .fp-controlArrow.fp-next {
+  bottom: 132px !important;
+  color: #ffffff !important;
   z-index: 20;
 }
 
-body.fp-viewing-3 .fp-controlArrow.fp-prev:hover,
-body.fp-viewing-3 .fp-controlArrow.fp-next:hover {
-  color: rgba(255, 255, 255, 0.82);
+html[class*="fp-viewing-5"] .fp-controlArrow.fp-prev i,
+html[class*="fp-viewing-5"] .fp-controlArrow.fp-next i,
+body[class*="fp-viewing-5"] .fp-controlArrow.fp-prev i,
+body[class*="fp-viewing-5"] .fp-controlArrow.fp-next i {
+  color: #ffffff !important;
 }
+
+html[class*="fp-viewing-5"] .fp-controlArrow.fp-prev:hover,
+html[class*="fp-viewing-5"] .fp-controlArrow.fp-next:hover,
+body[class*="fp-viewing-5"] .fp-controlArrow.fp-prev:hover,
+body[class*="fp-viewing-5"] .fp-controlArrow.fp-next:hover {
+  color: #ffffff !important;
+}
+
 
 /* ------------------------------------- */
 /* PICTURES ............................ */
@@ -2513,6 +2525,16 @@ body.fp-viewing-3 .fp-controlArrow.fp-next:hover {
 #section2 .portfolio-overlay {
   background: rgba(15, 19, 38, 0.35);
   background-image: none;
+}
+
+#section2 .work-photo-slide .project-2 {
+  background: url("../img/67268fdaa74f2475a7769dfc_JCW%20next%20to%20camera%20rev.jpg") center 70% no-repeat;
+  background-size: contain;
+  background-color: #111834;
+}
+
+#section2 .work-photo-slide .portfolio-overlay {
+  background: linear-gradient(180deg, rgba(10, 20, 52, 0.56), rgba(10, 20, 52, 0.56));
 }
 
 #section2 .inside-section.project-type {
