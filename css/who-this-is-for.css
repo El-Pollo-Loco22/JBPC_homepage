@@ -1,0 +1,215 @@
+#section5 {
+  background:
+    radial-gradient(circle at 25% 10%, rgba(78, 49, 133, 0.24), rgba(12, 16, 39, 0)),
+    linear-gradient(170deg, #111834 0%, #121931 48%, #0f152b 100%);
+}
+
+body.fp-viewing-6 {
+  background: #0f152b;
+}
+
+.audience-section {
+  width: 100%;
+  overflow-y: auto;
+  height: calc(100% - 120px);
+  min-height: calc(100vh - 120px);
+  align-items: flex-start;
+  padding: 4.25rem 1.5rem 2.5rem;
+  background: transparent;
+}
+
+.audience-content {
+  width: min(1180px, 100%);
+  margin: 0 auto;
+  color: #f2f3f9;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.audience-kicker-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  margin-bottom: 0.85rem;
+}
+
+.audience-kicker-line {
+  width: 30px;
+  height: 2px;
+  background: #f1793f;
+}
+
+.audience-kicker {
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #f1793f;
+}
+
+.audience-content h2 {
+  margin: 0;
+  max-width: 860px;
+  font-family: "Fraunces", Georgia, serif;
+  font-size: clamp(2.05rem, 4vw, 3.35rem);
+  line-height: 1.05;
+  color: #ffffff;
+}
+
+.audience-content h2 span {
+  color: #6ea246;
+}
+
+.audience-intro {
+  margin: 1rem 0 1.1rem;
+  max-width: 880px;
+  color: #d7d9e8;
+  font-size: clamp(1rem, 1.6vw, 1.55rem);
+  line-height: 1.38;
+}
+
+.audience-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(3, minmax(0, 1fr));
+  gap: 0.85rem;
+  flex: 1;
+  min-height: 0;
+}
+
+.audience-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 14px;
+  padding: 1rem 1.15rem 1.05rem;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(2px);
+  transition: transform 220ms ease, border-color 220ms ease, box-shadow 220ms ease, background 220ms ease;
+}
+
+.audience-card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 0;
+  background: linear-gradient(180deg, #6ea246, rgba(110, 162, 70, 0.12));
+  transition: width 220ms ease;
+}
+
+.audience-card:hover,
+.audience-card:focus-within {
+  transform: translateY(-3px);
+  border-color: rgba(110, 162, 70, 0.6);
+  box-shadow: 0 12px 24px rgba(6, 9, 24, 0.35);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.audience-card:hover::before,
+.audience-card:focus-within::before {
+  width: 4px;
+}
+
+.audience-card h4,
+.audience-card p,
+.audience-number {
+  position: relative;
+  z-index: 1;
+}
+
+.audience-card-wide {
+  grid-column: 1 / -1;
+}
+
+.audience-number {
+  margin: 0 0 0.35rem;
+  color: #6ea246;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+}
+
+.audience-card h4 {
+  margin: 0 0 0.35rem;
+  color: #ffffff;
+  font-family: "Fraunces", Georgia, serif;
+  font-size: clamp(1.35rem, 2vw, 2rem);
+  line-height: 1.1;
+}
+
+.audience-card p {
+  margin: 0;
+  color: #d0d3e4;
+  font-size: clamp(0.98rem, 1.35vw, 1.45rem);
+  line-height: 1.33;
+}
+
+.audience-quote-wrap {
+  margin-top: 0.9rem;
+  display: block;
+}
+
+.audience-quote {
+  margin: 0;
+  padding-left: 0.8rem;
+  border-left: 4px solid #6ea246;
+  font-family: "Fraunces", Georgia, serif;
+  font-size: clamp(1.2rem, 2.2vw, 2.05rem);
+  font-style: italic;
+  line-height: 1.15;
+  color: #f5f6fb;
+}
+
+.audience-cta-wrap {
+  margin-top: 1.45rem;
+  display: flex;
+  justify-content: center;
+}
+
+.audience-contact-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 300px;
+  padding: 0.72rem 1.25rem;
+  border-radius: 22px;
+  background: #4a2e9a;
+  color: #ffffff;
+  font-family: "Montserrat", "Helvetica Neue", Arial, sans-serif;
+  font-size: 1.45rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  text-decoration: none;
+  box-shadow: 0 14px 30px rgba(10, 13, 30, 0.28);
+}
+
+.audience-contact-cta:hover,
+.audience-contact-cta:focus-visible {
+  background: #5536af;
+  color: #ffffff;
+}
+
+@media (max-width: 1000px) {
+  .audience-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    flex: initial;
+  }
+
+  .audience-card-wide {
+    grid-column: auto;
+  }
+
+  .audience-contact-cta {
+    min-width: 220px;
+    width: 100%;
+    font-size: 1.2rem;
+  }
+}
