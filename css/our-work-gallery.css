@@ -183,6 +183,7 @@
   width: 150px;
   min-width: 150px;
   height: 84px;
+  align-self: center;
   border-radius: 9px;
   display: flex;
   align-items: center;

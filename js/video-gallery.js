@@ -53,17 +53,30 @@
     description.textContent = nextDescription;
   }
 
+  function setActiveItem(activeItem) {
+    items.forEach(function(link) {
+      link.classList.remove("is-active");
+    });
+    activeItem.classList.add("is-active");
+  }
+
   items.forEach(function(item) {
     setThumbnailForItem(item);
+
+    item.addEventListener("mouseenter", function() {
+      setActiveItem(item);
+      setFeaturedVideo(item, false);
+    });
+
+    item.addEventListener("focus", function() {
+      setActiveItem(item);
+      setFeaturedVideo(item, false);
+    });
 
     item.addEventListener("click", function(event) {
       event.preventDefault();
 
-      items.forEach(function(link) {
-        link.classList.remove("is-active");
-      });
-      item.classList.add("is-active");
-
+      setActiveItem(item);
       setFeaturedVideo(item, true);
     });
   });
