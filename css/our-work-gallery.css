@@ -1,0 +1,283 @@
+.our-work-gallery-section {
+  width: 100%;
+  overflow-y: auto;
+  padding: 2rem 1.5rem;
+}
+
+.our-work-gallery-section .gallery-content {
+  width: min(1180px, 100%);
+  margin: 0 auto;
+}
+
+.our-work-gallery-section .section-kicker {
+  margin: 0 0 0.75rem;
+  font-size: 0.92rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #d1531c;
+}
+
+.our-work-gallery-section h1 {
+  margin: 0;
+  font-family: "Fraunces", Georgia, serif;
+  font-size: clamp(2rem, 3.8vw, 3.5rem);
+  line-height: 1.1;
+  color: #181827;
+}
+
+.our-work-gallery-section h1 span {
+  color: #43257d;
+}
+
+.our-work-gallery-section .section-subtitle {
+  margin: 0.9rem 0 2rem;
+  max-width: 860px;
+  font-size: clamp(1rem, 1.6vw, 1.65rem);
+  line-height: 1.4;
+  color: #505468;
+}
+
+.our-work-gallery-section .gallery-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(320px, 1fr);
+  gap: 1.2rem;
+  align-items: start;
+}
+
+.our-work-gallery-section .featured-card {
+  border: 1px solid #e6e7f1;
+  border-radius: 14px;
+  background: #ffffff;
+  overflow: hidden;
+}
+
+.our-work-gallery-section .video-poster {
+  position: relative;
+  display: block;
+  min-height: 390px;
+  padding: 1rem;
+  text-decoration: none;
+}
+
+.our-work-gallery-section .poster-featured {
+  background:
+    linear-gradient(180deg, rgba(27, 17, 53, 0.36), rgba(27, 17, 53, 0.36)),
+    radial-gradient(circle at 20% 15%, #5d44a3 0%, #2a1a59 58%, #201440 100%);
+}
+
+.our-work-gallery-section .video-label {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  padding: 0.35rem 0.7rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #f6e8ff;
+  background: rgba(87, 61, 145, 0.6);
+}
+
+.our-work-gallery-section .video-poster iframe {
+  width: 100%;
+  height: 100%;
+  min-height: 360px;
+  border: 0;
+  border-radius: 10px;
+  background: #000000;
+}
+
+.our-work-gallery-section .play-button {
+  position: relative;
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #f1793f;
+}
+
+.our-work-gallery-section .play-button::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 51%;
+  transform: translate(-45%, -50%);
+  border-style: solid;
+  border-width: 8px 0 8px 12px;
+  border-color: transparent transparent transparent #ffffff;
+}
+
+.our-work-gallery-section .play-button.small {
+  position: relative;
+  inset: auto;
+  transform: none;
+  width: 34px;
+  height: 34px;
+  box-shadow: none;
+}
+
+.our-work-gallery-section .play-button.small::before {
+  border-width: 6px 0 6px 9px;
+}
+
+.our-work-gallery-section .featured-copy {
+  padding: 1.5rem;
+}
+
+.our-work-gallery-section .featured-copy h2 {
+  margin: 0 0 0.55rem;
+  font-family: "Fraunces", Georgia, serif;
+  font-size: clamp(1.5rem, 2vw, 2.2rem);
+}
+
+.our-work-gallery-section .featured-copy p {
+  margin: 0;
+  color: #555a66;
+  font-size: 1.05rem;
+  line-height: 1.45;
+}
+
+.our-work-gallery-section .video-menu {
+  border: 1px solid #e6e7f1;
+  border-radius: 14px;
+  background: #fff;
+  overflow: hidden;
+}
+
+.our-work-gallery-section .video-menu-scroll {
+  max-height: 520px;
+  overflow-y: auto;
+  padding: 0.85rem;
+}
+
+.our-work-gallery-section .video-item {
+  display: flex;
+  gap: 0.95rem;
+  align-items: center;
+  border: 1px solid #e6e7f1;
+  border-radius: 11px;
+  padding: 0.85rem;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+.our-work-gallery-section .video-item + .video-item {
+  margin-top: 0.85rem;
+}
+
+.our-work-gallery-section .video-item:hover,
+.our-work-gallery-section .video-item:focus-visible,
+.our-work-gallery-section .video-item.is-active {
+  border-color: #d6d7e8;
+  box-shadow: 0 8px 22px rgba(28, 31, 52, 0.08);
+}
+
+.our-work-gallery-section .video-thumb {
+  position: relative;
+  width: 104px;
+  min-width: 104px;
+  height: 58px;
+  border-radius: 9px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+}
+
+.our-work-gallery-section .video-thumb.has-thumbnail::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(15, 16, 24, 0.14), rgba(15, 16, 24, 0.38));
+}
+
+.our-work-gallery-section .video-thumb .play-button {
+  position: relative;
+  z-index: 1;
+}
+
+.our-work-gallery-section .thumb-physician {
+  background: linear-gradient(135deg, #2b1b67, #452a93);
+}
+
+.our-work-gallery-section .thumb-patient {
+  background: linear-gradient(135deg, #0f326e, #234f9f);
+}
+
+.our-work-gallery-section .thumb-integrative {
+  background: linear-gradient(135deg, #1f321a, #3c5d2f);
+}
+
+.our-work-gallery-section .thumb-followup {
+  background: linear-gradient(135deg, #3b245a, #603998);
+}
+
+.our-work-gallery-section .video-copy {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.our-work-gallery-section .video-copy strong {
+  font-family: "Fraunces", Georgia, serif;
+  font-size: 1.14rem;
+  line-height: 1.15;
+}
+
+.our-work-gallery-section .video-copy em {
+  width: fit-content;
+  border-radius: 999px;
+  padding: 0.15rem 0.65rem;
+  background: #f2e7ff;
+  color: #6934ac;
+  font-style: normal;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 0.72rem;
+}
+
+.our-work-gallery-section .gallery-footer {
+  margin-top: 1.6rem;
+  display: flex;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+}
+
+.our-work-gallery-section .gallery-footer a {
+  text-decoration: none;
+  font-weight: 700;
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+}
+
+.our-work-gallery-section .cta-link {
+  border: 1px solid #181827;
+  color: #181827;
+  background: #ffffff;
+}
+
+@media (max-width: 990px) {
+  .our-work-gallery-section .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .our-work-gallery-section .video-menu-scroll {
+    max-height: 300px;
+  }
+
+  .our-work-gallery-section .video-poster {
+    min-height: 280px;
+  }
+
+  .our-work-gallery-section .video-poster iframe {
+    min-height: 250px;
+  }
+}

@@ -33,6 +33,7 @@
 
         <!-- ============== Resources style ============== -->
         <link rel="stylesheet" href="css/style-fullscreen-light.css" />
+        <link rel="stylesheet" href="css/our-work-gallery.css" />
 
 		<!-- Modernizr runs quickly on page load to detect features -->
 		<script src="js/modernizr.custom.js"></script>
@@ -82,7 +83,7 @@
 	        			<p class="subtitle">Most aren't lacking information, they're lacking <span>clarity</span>.</p>
 
 						<div class="hero-actions">
-							<a class="hero-btn" href="video-gallery.html">Watch Patient &amp; Physician Videos</a>
+							<a class="hero-btn" href="#4">Watch Patient &amp; Physician Videos</a>
 							<a class="hero-btn" href="#">Visit JCW Studios</a>
 						</div>
 
@@ -329,26 +330,106 @@
         			<h3>Our Work</h3>
         		</div>
 
-		    	<div id="right-block">
+				<div class="inside-section our-work-gallery-section">
+					<div class="gallery-content">
+						<p class="section-kicker">The Work</p>
+						<h1>Real patients. Real decisions. <span>Real outcomes.</span></h1>
+						<p class="section-subtitle">
+							Patient and physician stories that turn complex care into something people can understand and act on.
+						</p>
 
-					<div id="right-block-top">
+						<div class="gallery-grid">
+							<article class="featured-card">
+								<div class="video-poster poster-featured">
+									<span class="video-label" id="featured-label">Physician Story</span>
+									<iframe
+										id="featured-vimeo-player"
+										title="Featured video player"
+										src="https://player.vimeo.com/video/1169440113?title=0&amp;byline=0&amp;portrait=0"
+										loading="lazy"
+										allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
+										allowfullscreen>
+									</iframe>
+								</div>
+								<div class="featured-copy">
+									<h2 id="featured-title">Integrative Drs. Talk Hyperthermia</h2>
+									<p id="featured-description">Physician perspective on integrative treatment and clinical decision-making.</p>
+								</div>
+							</article>
 
-						<div class="global-overlay"></div>
+							<aside class="video-menu" aria-label="Video menu">
+								<div class="video-menu-scroll">
+									<a
+										href="https://vimeo.com/1169440113"
+										class="video-item is-active"
+										data-vimeo-id="1169440113"
+										data-title="Integrative Drs. Talk Hyperthermia"
+										data-label="Physician Story"
+										data-description="Physician perspective on integrative treatment and clinical decision-making.">
+										<span class="video-thumb thumb-physician">
+											<span class="play-button small" aria-hidden="true"></span>
+										</span>
+										<span class="video-copy">
+											<strong>Integrative Drs. Talk Hyperthermia</strong>
+											<em>Physician Story</em>
+										</span>
+									</a>
 
-						<div class="right-content">
-							<a href="video-gallery.html" class="work-square-link work-video-link">Video Gallery</a>
+									<a
+										href="https://vimeo.com/1169423488"
+										class="video-item"
+										data-vimeo-id="1169423488"
+										data-title="Dana Testimonial Short"
+										data-label="Patient Story"
+										data-description="A patient story focused on treatment experience and outcomes.">
+										<span class="video-thumb thumb-patient">
+											<span class="play-button small" aria-hidden="true"></span>
+										</span>
+										<span class="video-copy">
+											<strong>Dana Testimonial Short</strong>
+											<em>Patient Story</em>
+										</span>
+									</a>
 
+									<a
+										href="https://vimeo.com/1169428144"
+										class="video-item"
+										data-vimeo-id="1169428144"
+										data-title="Ember Testimonial Short"
+										data-label="Patient Story"
+										data-description="A patient journey story highlighting the path from diagnosis to care decisions.">
+										<span class="video-thumb thumb-integrative">
+											<span class="play-button small" aria-hidden="true"></span>
+										</span>
+										<span class="video-copy">
+											<strong>Ember Testimonial Short</strong>
+											<em>Patient Story</em>
+										</span>
+									</a>
+
+									<a
+										href="https://vimeo.com/1169434578"
+										class="video-item"
+										data-vimeo-id="1169434578"
+										data-title="Dr. Hancock's Philosophy"
+										data-label="Physician Story"
+										data-description="Clinical philosophy and care approach from the physician point of view.">
+										<span class="video-thumb thumb-followup">
+											<span class="play-button small" aria-hidden="true"></span>
+										</span>
+										<span class="video-copy">
+											<strong>Dr. Hancock's Philosophy</strong>
+											<em>Physician Story</em>
+										</span>
+									</a>
+								</div>
+							</aside>
+						</div>
+
+						<div class="gallery-footer">
+							<a href="#6" class="cta-link">Get in Contact</a>
 						</div>
 					</div>
-
-					<div id="right-block-bottom">
-
-						<div class="right-content">
-							<a href="#5" class="work-square-link work-protocol-link">Prostate Cancer Protocol</a>
-			    		</div>
-
-					</div>
-
 				</div>
 			</div>
 
@@ -627,6 +708,7 @@
 
 		<!-- Main JS File -->
 		<script src="js/main-fullscreen.js"></script>
+		<script src="js/video-gallery.js"></script>
 
 	</body>
 </html>

@@ -2460,6 +2460,18 @@ iframe {
   color: #6534ff;
 }
 
+body.fp-viewing-3 .fp-controlArrow.fp-prev,
+body.fp-viewing-3 .fp-controlArrow.fp-next {
+  bottom: 104px;
+  color: #ffffff;
+  z-index: 20;
+}
+
+body.fp-viewing-3 .fp-controlArrow.fp-prev:hover,
+body.fp-viewing-3 .fp-controlArrow.fp-next:hover {
+  color: rgba(255, 255, 255, 0.82);
+}
+
 /* ------------------------------------- */
 /* PICTURES ............................ */
 /* ------------------------------------- */
