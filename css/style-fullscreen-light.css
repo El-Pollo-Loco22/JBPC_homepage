@@ -2501,6 +2501,8 @@ iframe {
 
 #section2 .inside-section.project-type {
   overflow: hidden;
+  height: 100vh;
+  min-height: 100vh;
 }
 
 #section2 .project-type .inside-split-text {

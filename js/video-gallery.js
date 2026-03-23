@@ -9,6 +9,36 @@
     return;
   }
 
+  function setThumbnailForItem(item) {
+    var vimeoId = item.getAttribute("data-vimeo-id");
+    var thumb = item.querySelector(".video-thumb");
+
+    if (!vimeoId || !thumb) {
+      return;
+    }
+
+    var oembedUrl = "https://vimeo.com/api/oembed.json?url=" + encodeURIComponent("https://vimeo.com/" + vimeoId);
+
+    fetch(oembedUrl)
+      .then(function(response) {
+        if (!response.ok) {
+          throw new Error("Unable to fetch Vimeo thumbnail");
+        }
+        return response.json();
+      })
+      .then(function(data) {
+        if (!data || !data.thumbnail_url) {
+          return;
+        }
+
+        thumb.style.backgroundImage = "url('" + data.thumbnail_url + "')";
+        thumb.classList.add("has-thumbnail");
+      })
+      .catch(function() {
+        // Keep existing CSS gradient fallback when thumbnail fetch fails.
+      });
+  }
+
   function setFeaturedVideo(item, autoplay) {
     var vimeoId = item.getAttribute("data-vimeo-id");
     var nextTitle = item.getAttribute("data-title") || "";
@@ -24,6 +54,8 @@
   }
 
   items.forEach(function(item) {
+    setThumbnailForItem(item);
+
     item.addEventListener("click", function(event) {
       event.preventDefault();
 

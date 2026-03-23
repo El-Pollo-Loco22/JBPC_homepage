@@ -199,6 +199,7 @@ h1 span {
 }
 
 .video-thumb {
+  position: relative;
   width: 104px;
   min-width: 104px;
   height: 58px;
@@ -206,6 +207,21 @@ h1 span {
   display: flex;
   align-items: center;
   justify-content: center;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+}
+
+.video-thumb.has-thumbnail::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(15, 16, 24, 0.14), rgba(15, 16, 24, 0.38));
+}
+
+.video-thumb .play-button {
+  position: relative;
+  z-index: 1;
 }
 
 .thumb-physician {
