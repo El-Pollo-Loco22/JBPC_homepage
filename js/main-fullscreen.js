@@ -116,17 +116,17 @@ $(document).ready(function() {
         scrollingSpeed: 800,
         responsiveWidth: 1025,
         afterLoad: function(anchorLink, index) {
-            if (index === 3) {
+            if (index === 4) {
                 startWorkSliderTimer();
             } else {
                 clearWorkSliderTimer();
             }
         },
         onLeave: function(index, nextIndex) {
-            if (index === 3 && nextIndex !== 3) {
+            if (index === 4 && nextIndex !== 4) {
                 clearWorkSliderTimer();
             }
-            if (nextIndex === 3) {
+            if (nextIndex === 4) {
                 startWorkSliderTimer();
             }
         }
