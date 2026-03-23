@@ -40,8 +40,8 @@
 
 .our-work-gallery-section .gallery-grid {
   display: grid;
-  grid-template-columns: minmax(0, 2fr) minmax(320px, 1fr);
-  gap: 1.2rem;
+  grid-template-columns: minmax(0, 1.8fr) minmax(420px, 1.2fr);
+  gap: 1.35rem;
   align-items: start;
 }
 
@@ -150,7 +150,7 @@
 }
 
 .our-work-gallery-section .video-menu-scroll {
-  max-height: 520px;
+  max-height: 560px;
   overflow-y: auto;
   padding: 0.85rem;
 }
@@ -158,10 +158,10 @@
 .our-work-gallery-section .video-item {
   display: flex;
   gap: 0.95rem;
-  align-items: center;
+  align-items: flex-start;
   border: 1px solid #e6e7f1;
   border-radius: 11px;
-  padding: 0.85rem;
+  padding: 1rem;
   text-decoration: none;
   color: inherit;
   cursor: pointer;
@@ -180,9 +180,9 @@
 
 .our-work-gallery-section .video-thumb {
   position: relative;
-  width: 104px;
-  min-width: 104px;
-  height: 58px;
+  width: 150px;
+  min-width: 150px;
+  height: 84px;
   border-radius: 9px;
   display: flex;
   align-items: center;
@@ -222,13 +222,14 @@
 
 .our-work-gallery-section .video-copy {
   display: grid;
-  gap: 0.35rem;
+  gap: 0.45rem;
 }
 
 .our-work-gallery-section .video-copy strong {
   font-family: "Fraunces", Georgia, serif;
   font-size: 1.14rem;
   line-height: 1.15;
+  color: #202338;
 }
 
 .our-work-gallery-section .video-copy em {
@@ -242,6 +243,12 @@
   text-transform: uppercase;
   letter-spacing: 0.05em;
   font-size: 0.72rem;
+}
+
+.our-work-gallery-section .video-item-description {
+  font-size: 0.9rem;
+  line-height: 1.4;
+  color: #5e6274;
 }
 
 .our-work-gallery-section .gallery-footer {
@@ -270,7 +277,7 @@
   }
 
   .our-work-gallery-section .video-menu-scroll {
-    max-height: 300px;
+    max-height: 360px;
   }
 
   .our-work-gallery-section .video-poster {
@@ -279,5 +286,11 @@
 
   .our-work-gallery-section .video-poster iframe {
     min-height: 250px;
+  }
+
+  .our-work-gallery-section .video-thumb {
+    width: 132px;
+    min-width: 132px;
+    height: 74px;
   }
 }
