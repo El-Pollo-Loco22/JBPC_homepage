@@ -109,7 +109,7 @@ $(document).ready(function() {
 
     $("#fullpage").fullpage({
         anchors: "123456".split(""),
-        navigationTooltips: ["Home", "How We Work", "The Work", "Our Work", "About Jacob", "Contact"],
+        navigationTooltips: ["Home", "Our Work", "How We Work", "The Work", "About Jacob", "Contact"],
         showActiveTooltip: !1,
         menu: "#menu",
         css3: !0,
