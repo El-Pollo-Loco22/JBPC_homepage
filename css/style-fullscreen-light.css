@@ -2726,6 +2726,18 @@ body[class*="fp-viewing-4"] .fp-controlArrow.fp-next:hover {
   margin-top: 2rem;
 }
 
+#section2 .why-me-slide .project-type .why-me-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 1.2rem;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+#section2 .why-me-slide .project-type .why-me-actions .ibtn {
+  margin-top: 0;
+}
+
 #section2 .inside-section.project-type {
   overflow: hidden;
   height: 100vh;
