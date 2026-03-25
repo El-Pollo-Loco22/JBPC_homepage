@@ -68,25 +68,6 @@ $(".form-control").on("focusin focusout", function() {
 });
 $(document).ready(function() {
     "use strict";
-    var workSliderTimer = null;
-
-    function clearWorkSliderTimer() {
-        if (workSliderTimer) {
-            window.clearInterval(workSliderTimer);
-            workSliderTimer = null;
-        }
-    }
-
-    function startWorkSliderTimer() {
-        if (workSliderTimer) {
-            return;
-        }
-        workSliderTimer = window.setInterval(function() {
-            if ($("body").hasClass("fp-viewing-5")) {
-                $.fn.fullpage.moveSlideRight();
-            }
-        }, 15000);
-    }
 
     var homeVideo = document.getElementById("home-bg-video");
     if (homeVideo) {
@@ -109,28 +90,29 @@ $(document).ready(function() {
 
     $("#fullpage").fullpage({
         anchors: "123456".split(""),
-        navigationTooltips: ["Home", "Our Work", "How We Work", "Who This Is For", "The Work", "Contact"],
+        navigationTooltips: ["Main", "Our Work", "How We Work", "Who This Is For", "Why Me", "Contact"],
         showActiveTooltip: !1,
         menu: "#menu",
         css3: !0,
         scrollingSpeed: 800,
-        responsiveWidth: 1025,
-        afterLoad: function(anchorLink, index) {
-            if (index === 5) {
-                startWorkSliderTimer();
-            } else {
-                clearWorkSliderTimer();
-            }
-        },
-        onLeave: function(index, nextIndex) {
-            if (index === 5 && nextIndex !== 5) {
-                clearWorkSliderTimer();
-            }
-            if (nextIndex === 5) {
-                startWorkSliderTimer();
-            }
-        }
+        responsiveWidth: 1025
     });
+
+    var $fpNav = $("#fp-nav");
+    if ($fpNav.length && !$fpNav.find(".clinicians-site-home-item").length) {
+        $fpNav.find("ul").before(
+            '<div class="clinicians-site-home-item">' +
+                '<button type="button" class="clinicians-site-home-btn" aria-label="Go to JBPC home page">' +
+                    "<span></span>" +
+                    '<div class="fp-tooltip">Home</div>' +
+                "</button>" +
+            "</div>"
+        );
+        $fpNav.on("click", ".clinicians-site-home-btn", function(event) {
+            event.stopPropagation();
+            window.location.href = "index.html";
+        });
+    }
 
     /* ------------------------------------- */
     /* 4. Countdown ........................ */
@@ -175,7 +157,17 @@ $(document).ready(function() {
     /* ------------------------------------- */
 
    $(window).on("click", function(a) {
-        "fp-nav" === a.target.id || $("#menu-access , #fp-nav li, #fp-nav a").find(a.target).length || (menuclosing());
+        var t = a.target;
+        if (t.id === "fp-nav") {
+            return;
+        }
+        if ($("#menu-access , #fp-nav li, #fp-nav a").find(t).length) {
+            return;
+        }
+        if ($(t).closest(".clinicians-site-home-btn").length) {
+            return;
+        }
+        menuclosing();
     });
 
     $("#menu-access").on("click", function(event) {
