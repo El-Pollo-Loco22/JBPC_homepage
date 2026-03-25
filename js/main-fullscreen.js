@@ -82,6 +82,20 @@ $(document).ready(function() {
         };
         homeVideo.addEventListener("canplay", tryPlayVideo, { once: true });
         tryPlayVideo();
+        document.addEventListener("visibilitychange", function() {
+            if (!document.hidden && homeVideo.paused) {
+                tryPlayVideo();
+            }
+        });
+        window.addEventListener("pageshow", function(ev) {
+            if (ev.persisted && homeVideo.paused) {
+                tryPlayVideo();
+            }
+        });
+        homeVideo.addEventListener("ended", function() {
+            homeVideo.currentTime = 0;
+            tryPlayVideo();
+        });
     }
 
     /* ------------------------------------- */
