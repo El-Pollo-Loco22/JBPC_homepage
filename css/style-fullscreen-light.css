@@ -1771,6 +1771,15 @@ iframe {
   margin-top: 1.4rem;
 }
 
+#section1 .how-work-wrap .subtitle .subtitle-lead {
+  display: inline-block;
+}
+
+#section1 .how-work-wrap .subtitle .subtitle-sub {
+  display: block;
+  margin-top: 0.35em;
+}
+
 #section1 .how-work-cards {
   display: grid;
   grid-template-columns: 1fr 1fr;
