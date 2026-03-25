@@ -805,7 +805,7 @@ iframe {
   text-shadow: 0 0 10px rgba(110, 162, 70, 0.55);
 }
 
-/* JBPC Home link: only in DOM when clinicians page; hidden until sidebar is opened */
+/* JBPC Home link: only in DOM on integrative-practitioners page; hidden until sidebar is opened */
 #fp-nav .clinicians-site-home-item {
   display: none;
 }
