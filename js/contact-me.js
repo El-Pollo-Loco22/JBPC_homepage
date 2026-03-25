@@ -1,71 +1,61 @@
 $(document).ready(function() {
 
-    $("#contact-form [type='submit']").click(function(e) {
+    $("#contact-form").on("submit", function(e) {
         e.preventDefault();
 
-        $('#valid-form').html('Sending <i class="fa fa-spinner fa-pulse fa-fw"></i>'); // Message displayed in the submit button during the sending
-        
-        // Get input field values of the contact form
-        var user_checking      = $('input[name=checking]').val(); // Anti-spam field
+        if ($('input[name=_gotcha]').val()) {
+            return;
+        }
 
-        var user_name          = $('input[name=name]').val();
-        var user_email         = $('input[name=email-address]').val();
-        var user_reason        = $('#contact-form [name=reason]').val();
-        var user_phone         = $('input[name=phone]').val();
-        var user_message       = $('textarea[name=message]').val();
-        var user_newsletter    = $('input[name=newsletter]').val();
-       
-        // Datadata to be sent to server
-        post_data = {
-            'userChecking':user_checking,
-            'userName':user_name,
-            'userEmail':user_email,
-            'userSubject':user_reason,
-            'userPhone':user_phone,
-            'userMessage':user_message,
-            'userNewsletter':user_newsletter,
-        };
-       
-        // Ajax post data to server
-        $.post('php/contact-me.php', post_data, function(response){  
-           
-            // Load json data from server and output message    
-            if(response.type == 'error') {
+        $('#valid-form').html('Sending <i class="fa fa-spinner fa-pulse fa-fw"></i>');
 
-                output = '<div class="error-message"><p>'+response.text+'</p></div>';
+        var form = this;
+        var formData = new FormData(form);
+        var reason = $('#contact-form [name=reason]').val() || '';
+        formData.set('_subject', 'Clinicians page: ' + (reason || 'Contact'));
 
-                $('#valid-form').html('Send my Message'); // Message displayed in the submit button if an error has occured
-                
-            } else {
-           
-                output = '<div class="success-message"><p>'+response.text+'</p></div>';
-               
-                // After, all the fields are reseted
-                $('#contact-form input').val('');
-                $('#contact-form textarea').val('');
-                $('#contact-form select').val('placeholder').addClass('no-selection');
-                
-                $('#valid-form').html('Sent!'); // Message displayed in the submit button when the submission is successfull
-            }
-           
-            $("#answer").hide().html(output).fadeIn();
-
-        }, 'json');
-
+        fetch(form.action, {
+            method: 'POST',
+            body: formData,
+            headers: { Accept: 'application/json' }
+        })
+            .then(function(response) {
+                return response.json().then(function(data) {
+                    if (response.ok) {
+                        $('#contact-form input:not([name="_gotcha"])').val('');
+                        $('#contact-form textarea').val('');
+                        $('#contact-form select').val('placeholder').addClass('no-selection');
+                        $('#valid-form').html('Sent!');
+                        var output = '<div class="success-message"><p>Thank you! Your message has been sent.</p></div>';
+                        $("#answer").hide().html(output).fadeIn();
+                    } else {
+                        $('#valid-form').html('Send Message');
+                        var msg =
+                            data && (data.error || (data.errors && data.errors[0] && data.errors[0].message))
+                                ? data.error || data.errors[0].message
+                                : 'Something went wrong. Please try again.';
+                        var output = '<div class="error-message"><p>' + msg + '</p></div>';
+                        $("#answer").hide().html(output).fadeIn();
+                    }
+                });
+            })
+            .catch(function() {
+                $('#valid-form').html('Send Message');
+                var output =
+                    '<div class="error-message"><p>Network error. Please check your connection and try again.</p></div>';
+                $("#answer").hide().html(output).fadeIn();
+            });
     });
-   
-    // Reset and hide all messages on .keyup()
-    $("#contact-form input, #contact-form textarea").keyup(function() {
+
+    $("#contact-form input, #contact-form textarea").on("keyup", function() {
         $("#answer").fadeOut();
     });
 
-    // Accept only figure from 0 to 9 and + ( ) in the phone field
-    $("#contact-form #phone").keyup(function() {
+    $("#contact-form #phone").on("keyup", function() {
         $("#phone").val(this.value.match(/[0-9+() -]*/));
     });
-    
+
     $('#contact-form').on('change', 'input#ios', function() {
-        this.checked ? this.value = 'Yes' : this.value = 'No';
+        this.checked ? (this.value = 'Yes') : (this.value = 'No');
     });
-   
 });
