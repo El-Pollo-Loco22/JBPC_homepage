@@ -89,8 +89,8 @@ $(document).ready(function() {
     /* ------------------------------------- */
 
     $("#fullpage").fullpage({
-        anchors: "123456".split(""),
-        navigationTooltips: ["Main", "Our Work", "How We Work", "Who This Is For", "Why Me", "Contact"],
+        anchors: "12345".split(""),
+        navigationTooltips: ["Main", "Our Work", "How We Work", "Why Me", "Contact"],
         showActiveTooltip: !1,
         menu: "#menu",
         css3: !0,
