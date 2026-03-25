@@ -49,7 +49,7 @@ if($_POST) {
     }
 
     if(empty($_POST["userSubject"])) {
-        $output = json_encode(array('type'=>'error', 'text' => '<i class="icon ion-close-round"></i> Please select the subject of your message.'));
+        $output = json_encode(array('type'=>'error', 'text' => '<i class="icon ion-close-round"></i> Please enter what your message is regarding.'));
         die($output);
     }
 

@@ -10,7 +10,7 @@ $(document).ready(function() {
 
         var user_name          = $('input[name=name]').val();
         var user_email         = $('input[name=email-address]').val();
-        var user_reason        = $('select[name=reason]').val();
+        var user_reason        = $('#contact-form [name=reason]').val();
         var user_phone         = $('input[name=phone]').val();
         var user_message       = $('textarea[name=message]').val();
         var user_newsletter    = $('input[name=newsletter]').val();
