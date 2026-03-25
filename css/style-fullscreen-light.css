@@ -1842,6 +1842,16 @@ iframe {
   color: #1a1a1a;
 }
 
+@media (min-width: 1024px) {
+  #section1 .how-work-close:has(.how-work-close-line) {
+    max-width: none;
+  }
+
+  #section1 .how-work-close p.how-work-close-line {
+    white-space: nowrap;
+  }
+}
+
 #section1 .how-work-lead {
   margin-top: 1.2rem;
   font-style: italic;
